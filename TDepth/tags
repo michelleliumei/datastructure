@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AllPath	treeDepth.cpp	/^void AllPath(BiTree*& node, stack*& S, stack*& sHead)$/;"	f
+BiTree	stack.h	/^struct BiTree$/;"	s
+CreateBiTree	stack.cpp	/^void CreateBiTree(BiTree*& T, char* array, int total)$/;"	f
+Pop	stack.cpp	/^bool Pop(stack*& s)$/;"	f
+PreOrderTree	stack.cpp	/^void PreOrderTree(BiTree* T)$/;"	f
+Print	stack.cpp	/^void Print(stack*& s)$/;"	f
+Push	stack.cpp	/^stack* Push(stack*& s, BiTree data)$/;"	f
+ReadArray	stack.cpp	/^int ReadArray(int count, int total)$/;"	f
+STACK_H	stack.h	2;"	d
+TNode	stack.h	/^   BiTree TNode;$/;"	m	struct:stack
+left	stack.h	/^   BiTree* left;$/;"	m	struct:BiTree
+main	treeDepth.cpp	/^int main()$/;"	f
+next	stack.h	/^   stack* next;$/;"	m	struct:stack
+node	stack.h	/^   char node;$/;"	m	struct:BiTree
+number	stack.cpp	/^int number = 0;$/;"	v
+right	stack.h	/^   BiTree* right;$/;"	m	struct:BiTree
+stack	stack.h	/^struct stack$/;"	s
