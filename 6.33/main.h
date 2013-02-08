@@ -1,8 +1,22 @@
-//假定用两个一维数组L[1...n]和R[1...n]作为有n个节点的二叉树的存储结构，L[i]和R[i]分别指示节点i的左孩子和右孩
-//子，0表示空。写一个算法判别节点u是否为节点v的子孙。
-#include <stdio.h>
+/******************************************************************************
+ *Author:  liumei
+ *Version: 1.0
+ *Excersice: we use two arrays--L[1..n],R[1..n] to represent a tree.L[i] and 
+ *R[i] indicate node i's left child and right child independently. if the value
+ *is zero, it indicates no child.Try to write a program to check whether node u
+ *is node v's offspring.
+ *This file declaim the function:
+ *FindLeaf(int* child, int node_index, int node_u ).This function is to judge 
+ *whether node u is node v's child.
+ * ***************************************************************************/
+#ifndef IOSTREAM_H_
+#define IOSTREAM_H_
+#include <iostream>
+using namespace std;
+#endif
 
-int number = 0;
-void CreateLeaf(int* &array);
-void CreateNode(char* &array);
-bool FindLeaf(int* leafArray, char* array, char node);
+//if node u is node v's offsrping, it will return true.
+//node_v and node_u should be greater than zero.
+//pointer child should not be NULL.This function is a recursion function.
+bool FindLeaf(int* left, int* right, int node_v, int node_u);
+

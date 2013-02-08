@@ -1,3 +1,14 @@
+/******************************************************************************
+ *Author:  liumei
+ *Version: 1.0
+ *This file implement two functions, 
+ *change_tree_child(BiTree *$tree_node)
+ *this function use recursion to exchange tree's left child and right child.
+ *int main()
+ *this function invoke create_tree_array to create a array which describe a 
+ *tree, then invoke create_tree to create a Bi-tree, finally, invoke 
+ *change_tree_child to exchange a Bi-tree's left child and right child.
+ * ***************************************************************************/
 #ifndef CREATE_TREE_H
 #define CREATE_TREE_H
 
@@ -6,6 +17,8 @@
 #endif
 using namespace std;
 
+//pass a tree's root to this function, it will exchange the tree's left child 
+//and right child.
 void change_tree_child(BiTree *&tree_node)
 {   
     if (tree_node ->left != NULL && tree_node ->right != NULL)
@@ -30,6 +43,7 @@ void change_tree_child(BiTree *&tree_node)
     }
 };
 
+//program's entrance
 int main()
 {
     cout <<"please input the tree node's number:"<<endl;
@@ -41,6 +55,7 @@ int main()
     preorder_tree(tree);
     change_tree_child(tree);
     preorder_tree(tree);
-        
+    delete[] tree_array;
+    delete_tree(tree);    
     return 1;
 };
