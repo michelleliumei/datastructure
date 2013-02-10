@@ -75,8 +75,8 @@ void delete_tree(BiTree* tree)
     if (tree != NULL)
     {
        cout << "Tree node:"<<tree ->node<<endl;
-       preorder_tree(tree ->left);
-       preorder_tree(tree ->right);
+       delete_tree(tree ->left);
+       delete_tree(tree ->right);
        delete tree;
     }
 };
