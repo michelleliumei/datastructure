@@ -25,7 +25,7 @@ int main()
     BiTree* bi_tree = create_tree(tree_array, array_index);
     int max_size = 50;   
     Queue<BiTree> queue_bi_tree ;
-    queue_bi_tree = create_queue(max_size);
+    queue_bi_tree = create_queue<BiTree>(max_size);
     
     BiTree p = *bi_tree;
     if (!queue_full(queue_bi_tree))
