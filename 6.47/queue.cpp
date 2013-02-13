@@ -26,18 +26,18 @@ Queue<T> create_queue(int maxsize)
 };
 
 template <class T>
-bool push_queue(T element, Queue<T> queue)
+bool push_queue(T element, Queue<T>& queue)
 {
-    int index = (queue.top + 1) % queue.maxsize; 
-    if (index == queue.bottom)
+    int index = queue.top ; 
+    if ((index+1) % queue.maxsize == queue.bottom)
         return false;
     queue.queue_array[index] = element;
-    queue.top = index;
+    queue.top = (index + 1)%queue.maxsize;
     return true;  
 };
 
 template <class T>
-T pop_queue(Queue<T> queue)
+T pop_queue(Queue<T>& queue)
 {
     T element = queue.queue_array[queue.bottom];
     queue.bottom = (queue.bottom+1)%queue.maxsize;
@@ -62,17 +62,17 @@ bool queue_full(Queue<T> queue)
        return false;
 };
 
+
 template <class T>
-void queue_display(Queue<T> queue)
+ostream& operator <<(ostream& os, Queue<T> queue)
 {
-    int index = 0;
-    if (queue_empty(queue))
-       cout <<"queue is empty!"<<endl;
-    while (index <= queue.top)
-    {
-       cout <<"queue element:"<<queue.queue_array[index];
-       index ++;
-    }
+      int index = queue.bottom;
+      while(queue.top != queue.bottom && index % queue.maxsize != queue.top)
+      {
+	os << queue.queue_array[index];
+        index ++;
+      }
+      return os;
 };
 
 #endif

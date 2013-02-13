@@ -17,6 +17,7 @@ using namespace std;
 
 #ifndef QUEUE_H_
 #define QUEUE_H_
+#include "create_tree.h"
 
 template <class T>
 struct Queue
@@ -31,10 +32,10 @@ template <class T>
 Queue<T> create_queue(int maxsize);
 
 template <class T>
-bool push_queue(T element, Queue<T> queue);
+bool push_queue(T element, Queue<T>& queue);
 
 template <class T>
-T pop_queue(Queue<T> queue);
+T pop_queue(Queue<T>& queue);
 
 template <class T>
 bool queue_empty(Queue<T> queue);
@@ -42,7 +43,8 @@ bool queue_empty(Queue<T> queue);
 template <class T>
 bool queue_full(Queue<T> queue);
 
+
 template <class T>
-void queue_display(Queue<T> queue);
+ostream& operator<<(ostream& os, Queue<T> queue);
 #endif
 

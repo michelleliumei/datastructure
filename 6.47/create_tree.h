@@ -41,4 +41,5 @@ int* create_tree_array(int node_number);
 BiTree* create_tree(int* tree_array, int &index);
 void preorder_tree(BiTree* tree);
 void delete_tree(BiTree*& tree);
+ostream& operator<<(ostream& os, BiTree tree_node);
 #endif

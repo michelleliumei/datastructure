@@ -31,17 +31,17 @@ int main()
     if (!queue_full(queue_bi_tree))
        push_queue(p, queue_bi_tree);
     while(!queue_empty(queue_bi_tree))
-    {
+    {  
        BiTree tree_node = pop_queue(queue_bi_tree);
-       cout <<"node:"<<tree_node.node<<endl;
-       if (!tree_node.left)
+       cout <<"visit level node:"<<tree_node.node<<endl;
+       if (tree_node.left != NULL)
        {
            if (!queue_full(queue_bi_tree))
                push_queue(*(tree_node.left), queue_bi_tree);
            else
                cout <<"queue is full!"<<endl;
        }
-       if (!tree_node.right)
+       if (tree_node.right != NULL)
        {
            if (!queue_full(queue_bi_tree))
                push_queue(*(tree_node.right), queue_bi_tree);

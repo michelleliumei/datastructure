@@ -39,7 +39,6 @@ int* create_tree_array(int node_number)
 //be a reference during the recursion.
 BiTree* create_tree(int* tree_array, int &index)
 {
-    cout <<"tree_array["<<index<<"]"<<tree_array[index]<<endl;
     if (tree_array[index] != 0 && index <= tree_number)
     {
 	BiTree* tree_node = new BiTree;
@@ -76,7 +75,6 @@ void delete_tree(BiTree*& tree)
 {
     if (tree != NULL)
     {
-       cout << "delete tree node:"<<tree ->node<<endl;
        delete_tree(tree ->left);
        delete_tree(tree ->right);
        delete tree;
@@ -97,4 +95,9 @@ void check_tree(BiTree* tree)
     {
        cout <<"NULL"<<endl; 
     }
-}
+};
+ostream& operator<<(ostream& os, BiTree tree_node)
+{
+    os <<tree_node.node;
+    return os;
+};
